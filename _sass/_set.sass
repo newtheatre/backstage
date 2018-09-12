@@ -1,40 +1,57 @@
+// Categories: Seating, Tables, Cabinets and Shelves, Beds, Kitchen, Bathroom, Architectural, Lighting, Exterior, Misc
+
+$color-seating: #000
+$color-tables: #000
+$color-cabinets-and-shelves: #000 
+$color-beds: #000 
+$color-kitchen: #000 
+$color-bathroom: #000 
+$color-architectural: #000 
+$color-lighting: #000
+$color-exterior: #000
+$color-misc: #000 
+
 $color-fresnel: #DC6D15
 $color-profile: #D0357D
 $color-flood: #32E1E5
 $color-strobe: yellow
 
 
-.lanterns
+.set
   @include boxy-list-container
 
-.lanterns-list
+.set-list
   @include boxy-list
 
 $swatch-width: 25%
 
-.lantern-item
+.set-item
   @include boxy-list-item
   color: $color-text-white
   padding: 1rem 1rem 1rem $swatch-width+6%
 
   i
-    font-size: 1.6em
+    // font-size: 1.6em
     vertical-align: middle
+    &.paint-false
+      color: red 
+    &.paint-true 
+      color: green 
 
-  .lantern-title
+  .set-title
     font-weight: lighter
 
-  .lantern-title + .lantern-name
+  .set-title + .set-name
     margin-top: -0.5em
 
-  .lantern-name
+  .set-name
     margin-bottom: 0.5em
     font-style: italic
 
   p
     margin: 0
 
-.lantern-image
+.set-image
   position: absolute
   top: 0
   left: 0
@@ -50,11 +67,11 @@ $swatch-width: 25%
 
 $background-mix: 45%
 
-.lantern-type-fresnel
+.set-type-fresnel, .set-type
   background: mix($color-fresnel, $color-background, $background-mix)
-.lantern-type-profile
+.set-type-profile
   background: mix($color-profile, $color-background, $background-mix)
-.lantern-type-flood
+.set-type-flood
   background: mix($color-flood, $color-background, $background-mix)
-.lantern-type-strobe
+.set-type-strobe
   background: mix($color-strobe, $color-background, $background-mix)

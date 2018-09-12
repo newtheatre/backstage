@@ -1,0 +1,33 @@
+# Categories: Seating, Tables, Cabinets and Shelves, Beds, Kitchen, Bathroom, Architectural, Lighting, Exterior, Misc
+
+- set: 
+  material: Wood 
+  name: Cane chair  
+  colour: Brown 
+  paint: false 
+  category: Seating 
+  image: cane-chair.png
+  measurements: Unknown 
+  notes: Pale and dark wood
+  stock: 
+    good: 2
+
+- set: 
+  material: Wood 
+  name: Kitchen chair 
+  colour: Dark brown 
+  paint: false 
+  category: Seating 
+  image: kitchen-chair.png
+  measurements: Unknown
+  notes: Mahogany look
+  stock: 
+    good: 4
+
+- set:
+  material: Wood, leather
+  name: Wooden leather chair 
+  colour: Dark red, brown 
+  paint: false 
+  category: Seating 
+  image: wooden-leather-chair.png

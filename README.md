@@ -8,26 +8,24 @@
 
 Stock lists are stored in [YAML](http://yaml.org/) files within the `_data/` directory.
 
-- For gels edit file `_data/gels.yml`:
-  - `code`, the filter code e.g. L201.
-  - `name`, the filter name e.g. Full C.T. Blue.
-  - `description`, a short description of the colour surrounded with quotes to allow the use of special characters.
-  - `color`, a [hexadecimal representation](https://en.wikipedia.org/wiki/Web_colors) of the colour without the hash prefix.
-  - `stock`, the stock levels of the filter.
-    - `sheet`, number of sheets held.
-    - `cut`, rough number of pre-cut filters held.
+### Set 
 
-- For lanterns edit file `_data/lanterns.yml`, the format hasn't been finalised yet.
+- For large set pieces, edit file `_data/set.yml`:
+  - `material`, the primary materials the object is made of e.g. Wood, Leather
+  - `name`, useful name of the item 
+  - `colour`, primary colours of the item e.g. Brown, Red
+  - `paint`, whether the item can be painted (`true` or `false`)
+  - `category` of the item. Photos are stored in category subfolders, and item cards are coloured for each category. 
+  - `image`, photo filename including extension. 
+  - `measurements`, where relevant, including units e.g. 400x400x300mm
+  - `notes`, other descriptions of the item, surrounded in quotes where using special characters.
+  - `stock`, the number of the item:
+    - `good`, in working order
+    - `broken`, in need of repair
 
-## Updating library from leefilters.com
+### Costumes and Props
 
-The script `_bin/lee_scrape.py` will load colour data, names and descriptions from LEE's catalogue. `_data/gels.yml` will be read in and updated where colours are present.
-
-## Adding stocktake data
-
-Type out, or use a spreadsheet program to write `_stocktake/cut.csv` and `_stocktake/sheet.csv`. Cut has three columns (none, some, many) whereas sheet has one which is unlabelled. Type out codes as you count, *i.e.* three L201s would be L201 repeated three times on their own line.
-
-Once CSVs are complete run `_bin/stocktake.py`, the script will warn if it's adding colours the data file has no name or colour information for.
+- For costumes and props edit files `_data/costumes.yml` and `_data/props.yml` respectively. The formats haven't been finalised yet.
 
 ## Forking
 
