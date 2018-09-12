@@ -1,6 +1,6 @@
-# New Theatre Lighting Stock Catalogue
+# New Theatre Backstage Catalogue
 
-[Jekyll](http://jekyllrb.com/) based site to catalogue theatrical lanterns, colour filters and gobos. Built as a replacement for [gel-view](https://github.com/wjdp/gel-view/).
+[Jekyll](http://jekyllrb.com/) based site to catalogue set, props and costumes. Based on [lx](http://github.com/newtheatre/lx)
 
 ![Screenshot](https://raw.githubusercontent.com/newtheatre/lx/gh-pages/screenshot.png)
 
