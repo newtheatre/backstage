@@ -4,13 +4,18 @@ layout: default
 <div class="nav-bar">
   <div class="wrapper">
     <div class="nav-button">
-      <a href="/" title="Back" class="nav-prev"><i class="fa fa-fw fa-angle-left"></i></a>
+      <a href="{{ site.baseurl }}" title="Back" class="nav-prev"><i class="fa fa-fw fa-angle-left"></i></a>
     </div>
-
-    <div class="nav-search">
-      <input id="q" type="text" placeholder="search" />
-    </div>
+    {% if page.search == true %}
+	    <div class="nav-search">
+	      <input id="search-box" type="text" placeholder="search" />
+	    </div>
+    {% endif %}
   </div>
 </div>
 
 {{ content }} 
+
+{% if page.search == true %}
+	<script src="{{ site.baseurl }}/js/search.js"></script>
+{% endif %}

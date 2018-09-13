@@ -2,30 +2,33 @@
 title: Set Stock
 layout: stock
 permalink: /set/
+search: true 
 ---
 
 <div class="wrapper">
 
-<div class="set">
-  <ul class="set-list">
-    {% for set in site.data.set %}
-    <li>
-      <div class="set-item set-type-{{ set.category | slugify }}">
-        <div class="set-image">
+  <div class="set">
+    <ul class="set-list" id="item-list">
+      {% for set in site.data.set %}
+      <li>
+        <div class="set-item set-type-{{ set.category | slugify }}" title="{{ set.category }}">
           {% if set.image %}
-          <img src="/images/set/{{ set.category | slugify }}/{{ set.image }}" />
+            <div class="set-image">
+              <img src="{{ site.baseurl }}/images/set/{{ set.category | slugify }}/{{ set.image }}" />
+            </div>
           {% endif %}
+          <h2 class="set-title"><strong>{{ set.name }}</strong> {% if set.material %}({{ set.material }}){% endif %}</h2>
+          <span class="category">{{ set.category }}</span>
+          {% if set.notes %}<p><em>{{ set.notes | markdownify }}</em></p>{% endif %}
+          {% if set.measurements %}<p><i class="fa fa-fw fa-ruler-combined"></i> {{ set.measurements }}</p>{% endif %}
+          {% if set.colour or set.paint %}<p>{% if set.colour %}<i class="fa fa-fw fa-palette"></i> {{ set.colour }}{% endif %} {% if set.paint == true %}<i class="fa fa-paint-brush fa-fw fa-sm" title="You may repaint this item."></i>{% endif %}</p>{% endif %}
+            
+          {% if set.stock.good %}<p><i class="fa fa-fw fa-tags"></i> {{ set.stock.good }} in stock</p>{% endif %}
         </div>
-        <h2 class="set-title"><strong>{{ set.name }}</strong> {% if set.material %}({{ set.material }}){% endif %}</h2>
-        {% if set.notes %}<p><em>{{ set.notes | markdownify }}</em></p>{% endif %}
-        {% if set.measurements %}<p><i class="fa fa-fw fa-ruler-combined"></i> {{ set.measurements }}</p>{% endif %}
-        {% if set.colour or set.paint %}<p>{% if set.colour %}<i class="fa fa-fw fa-palette"></i> {{ set.colour }}{% endif %} {% if set.paint == true %}<i class="fa fa-paint-brush fa-fw fa-sm" title="You may repaint this item."></i>{% endif %}</p>{% endif %}
-          
-        {% if set.stock.good %}<p><i class="fa fa-fw fa-tags"></i> {{ set.stock.good }} in stock</p>{% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 
 </div>
+
