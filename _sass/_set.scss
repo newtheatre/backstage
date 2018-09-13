@@ -3,19 +3,14 @@ $color-map: (
   seating: #DC6D15,
   tables: #964a0e,
   cabinets-and-shelves: #BF8C64,
-  beds: #32E1E5,
+  beds: #D0357D,
   kitchen: #2F8587,
-  bathroom: #BAF5F7,
+  bathroom: #32E1E5,
   architectural: #007C14,
   exterior: #2CB141,
   lighting: yellow,
   misc: #848181
 );
-
-$color-fresnel: #DC6D15;
-$color-profile: #D0357D;
-$color-flood: #32E1E5;
-$color-strobe: yellow;
 
 .set {
   @include boxy-list-container;

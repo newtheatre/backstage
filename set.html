@@ -16,7 +16,7 @@ permalink: /set/
           <img src="/images/set/{{ set.category | slugify }}/{{ set.image }}" />
           {% endif %}
         </div>
-        <h2 class="set-title"><strong>{{ set.name }}</strong> ({{ set.material }})</h2>
+        <h2 class="set-title"><strong>{{ set.name }}</strong> {% if set.material %}({{ set.material }}){% endif %}</h2>
         {% if set.notes %}<p><em>{{ set.notes | markdownify }}</em></p>{% endif %}
         {% if set.measurements %}<p><i class="fa fa-fw fa-ruler-combined"></i> {{ set.measurements }}</p>{% endif %}
         {% if set.colour or set.paint %}<p>{% if set.colour %}<i class="fa fa-fw fa-palette"></i> {{ set.colour }}{% endif %} {% if set.paint == true %}<i class="fa fa-paint-brush fa-fw fa-sm" title="You may repaint this item."></i>{% endif %}</p>{% endif %}
