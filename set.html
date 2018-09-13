@@ -10,7 +10,7 @@ permalink: /set/
   <ul class="set-list">
     {% for set in site.data.set %}
     <li>
-      <div class="set-item set-type-{{ set.category | slugify }} set-type">
+      <div class="set-item set-type-{{ set.category | slugify }}">
         <div class="set-image">
           {% if set.image %}
           <img src="/images/set/{{ set.category | slugify }}/{{ set.image }}" />

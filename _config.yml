@@ -12,5 +12,9 @@ exclude:
   - vendor
   - env
 
-gems:
- - jekyll-coffeescript
+plugins:
+  - jekyll-coffeescript
+
+sass:
+  style: compact 
+  sass_dir: _sass 

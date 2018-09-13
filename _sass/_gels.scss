@@ -1,0 +1,39 @@
+.gels {
+  @include boxy-list-container;
+}
+
+.gels-list {
+  @include boxy-list;
+}
+
+$swatch-width: 25%;
+
+.gel-item {
+  @include boxy-list-item;
+
+  padding: 1rem 1rem 1rem ($swatch-width + 6%);
+
+  p {
+    margin: 0;
+  }
+}
+
+.gel-swatch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $swatch-width;
+  height: 16em;
+  margin-right: 4%;
+}
+
+.gel-swatch-code {
+  position: absolute;
+  width: 3em;
+  top: 1.5em;
+  left: -0.6em;
+  transform: rotate(270deg);
+  font-weight: bold;
+  font-size: 2em;
+  text-align: right;
+}

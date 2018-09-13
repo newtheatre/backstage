@@ -1,0 +1,69 @@
+// Generics
+
+html, body {
+  background: $color-background;
+  box-sizing: border-box;
+  font-family: $base-font-family;
+  color: $color-text-white;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+.wrapper {
+  padding-left: 6px;
+  padding-right: 6px;
+  margin: 0 auto;
+
+  @include breakpoint(S) {
+    width: 90%;
+  }
+
+
+  @include breakpoint(M) {
+    width: 85%;
+  }
+
+
+  @include breakpoint(L) {
+    width: 80%;
+  }
+
+
+  @include breakpoint(XL) {
+    width: 75%;
+  }
+}
+
+// Header
+
+.site-header {
+  background: $color-brand;
+  color: $color-text-white;
+  padding: 0.4em 0;
+}
+
+.site-title {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+// Footer
+.site-footer {
+  margin: 2rem 0;
+  font-size: 0.8em;
+  text-align: center;
+  color: $color-grey-dark;
+}
+
+// Type
+
+h1, h2, h3, h4, h5, h6 {
+  // font-family: $header-font-family
+}
