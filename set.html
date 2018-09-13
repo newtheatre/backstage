@@ -25,6 +25,10 @@ filter: true
             <div class="set-image">
               <img src="{{ site.baseurl }}/images/set/{{ set.category | slugify }}/{{ set.image }}" />
             </div>
+          {% else %}
+            <div class="set-image" style="background:inherit;padding: 1em">
+              <i class="fa fa-fw fa-2x fa-cube"></i>
+            </div>
           {% endif %}
           <h2 class="set-title"><strong>{{ set.name }}</strong> {% if set.material %}({{ set.material }}){% endif %}</h2>
           <span class="category">{{ set.category }}</span>
