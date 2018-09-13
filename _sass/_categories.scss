@@ -6,7 +6,18 @@
   @include boxy-list;
   list-style-type: none;
   li {
-  	width: 20%;
+  	width: 50%;
+    @include breakpoint(S) {
+      width: 33.333%;
+    }
+    @include breakpoint(M) {
+    	width: 25%;
+    }
+
+    @include breakpoint(L) {
+      width: 20%;
+    }
+
   	.active {
   		font-weight: bold;
   	}
