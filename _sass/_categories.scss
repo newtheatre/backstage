@@ -1,0 +1,27 @@
+.category {
+  @include boxy-list-container;
+}
+
+.category-list {
+  @include boxy-list;
+  list-style-type: none;
+  li {
+  	width: 20%;
+  	.active {
+  		font-weight: bold;
+  	}
+  }
+}
+
+.category-item {
+	@include boxy-list-item;
+	background: inherit;
+	height: auto; 
+	min-height: inherit;
+	color: inherit; 
+	text-align: center; 
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline; 
+	}
+}

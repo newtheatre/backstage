@@ -3,13 +3,22 @@ title: Set Stock
 layout: stock
 permalink: /set/
 search: true 
+filter: true 
 ---
 
 <div class="wrapper">
-
+  <div class="category">
+    <ul class="category-list">
+      {% for category in site.data.set[0].categories %}
+        <li>
+          <div class="category-item set-type-{{ category.name | slugify }}" id="{{ category.name | slugify }}">{{ category.name }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
   <div class="set">
     <ul class="set-list" id="item-list">
-      {% for set in site.data.set %}
+      {% for set in site.data.set[1].set %}
       <li>
         <div class="set-item set-type-{{ set.category | slugify }}" title="{{ set.category }}">
           {% if set.image %}

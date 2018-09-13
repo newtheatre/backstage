@@ -12,6 +12,8 @@ $color-map: (
   misc: #848181
 );
 
+@import "categories";
+
 .set {
   @include boxy-list-container;
 }
