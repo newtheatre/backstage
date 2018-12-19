@@ -1,3 +1,32 @@
+// Set categories: Seating, Tables, Cabinets and Shelves, Beds, Kitchen, Bathroom, Architectural, Lighting, Exterior, Misc
+$set-color-map: ( 
+  seating: #DC6D15,
+  tables: #964a0e,
+  cabinets-and-shelves: #BF8C64,
+  beds: #D0357D,
+  kitchen: #2F8587,
+  bathroom: #32E1E5,
+  architectural: #007C14,
+  exterior: #2CB141,
+  lighting: yellow,
+  misc: #848181
+);
+
+// Prop categories: Storage, Weapons, Electrical, Kitchen, Misc
+$prop-color-map: ( 
+  storage: #DC6D15,
+  weapons: #964a0e,
+  electrical: yellow,
+  kitchen: #2F8587,
+  misc: #848181,
+  // Unused 
+  cabinets-and-shelves: #BF8C64,
+  beds: #D0357D,
+  bathroom: #32E1E5,
+  architectural: #007C14,
+  exterior: #2CB141,
+);
+
 .category {
   @include boxy-list-container;
 }

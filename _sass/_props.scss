@@ -1,14 +1,14 @@
-.set {
+.prop {
   @include boxy-list-container;
 }
 
-.set-list {
+.prop-list {
   @include boxy-list;
 }
 
 $swatch-width: 25%;
 
-.set-item {
+.prop-item {
   @include boxy-list-item;
 
   color: $color-text-white;
@@ -27,15 +27,15 @@ $swatch-width: 25%;
     }
   }
 
-  .set-title {
+  .prop-title {
     font-weight: lighter;
   }
 
-  .set-title + .set-name {
+  .prop-title + .prop-name {
     margin-top: -0.5em;
   }
 
-  .set-name {
+  .prop-name {
     margin-bottom: 0.5em;
     font-style: italic;
   }
@@ -45,7 +45,7 @@ $swatch-width: 25%;
   }
 }
 
-.set-image {
+.prop-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -62,8 +62,8 @@ $swatch-width: 25%;
 
 $background-mix: 45%;
 
-@each $type, $color in $set-color-map {
-  .set-type-#{$type} {
+@each $type, $color in $prop-color-map {
+  .prop-type-#{$type} {
     background: mix($color, $color-background, $background-mix);
   }
 };

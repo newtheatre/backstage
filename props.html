@@ -1,0 +1,50 @@
+---
+title: Prop Stock
+layout: stock
+permalink: /props/
+search: true 
+filter: true 
+---
+
+<div class="wrapper">
+  <div class="category">
+    <ul class="category-list">
+      {% for category in site.data.props[0].categories %}
+        <li>
+          <div class="category-item prop-type-{{ category.name | slugify }}" id="{{ category.name | slugify }}">{{ category.name }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="prop">
+    <ul class="prop-list" id="item-list">
+      {% for prop in site.data.props[1].props %}
+      <li>
+        <div class="prop-item prop-type-{{ prop.category | slugify }}" title="{{ prop.category }}">
+          {% if prop.image %}
+            <div class="prop-image">
+              <img src="{{ site.baseurl }}/images/prop/{{ prop.category | slugify }}/{{ prop.image }}" />
+            </div>
+          {% else %}
+            <div class="prop-image" style="background:inherit;padding: 1em">
+              <i class="fa fa-fw fa-2x fa-cube"></i>
+            </div>
+          {% endif %}
+          <h2 class="prop-title"><strong>{{ prop.name }}</strong> {% if prop.material %}({{ prop.material }}){% endif %}</h2>
+          <span class="category">{{ prop.category }}</span>
+          {% if prop.restricted %}<p><strong><i class="fa fa-fw fa-lock"></i>&nbsp;Seek permission to use this prop</strong></p>{% endif %}
+          {% if prop.notes %}<p><em>{{ prop.notes | markdownify }}</em></p>{% endif %}
+          {% if prop.fragile == true %}<p><strong><i class="fa fa-fw fa-exclamation-triangle"></i>&nbsp;Fragile, handle with care</strong></p>{% endif %}
+          {% if prop.measurements %}<p><i class="fa fa-fw fa-ruler-combined"></i> {{ prop.measurements }}</p>{% endif %}
+          {% if prop.batteries or prop.battery_type %}<p><i class="fa fa-fw fa-battery-three-quarters fa-rotate-270"></i>&nbsp;Requires {{ prop.battery_type | append: " " }}batteries</p>{% endif %}
+          {% if prop.color or prop.paint %}<p>{% if prop.color %}<i class="fa fa-fw fa-palette"></i> {{ prop.color }}{% endif %} {% if prop.paint == true %}<i class="fa fa-paint-brush fa-fw fa-sm" title="You may repaint this item."></i>{% endif %}</p>{% endif %}
+            
+          {% if prop.stock.good %}<p><i class="fa fa-fw fa-tags"></i> {{ prop.stock.good }} in stock</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
+

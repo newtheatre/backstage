@@ -4,7 +4,7 @@
 
 // Our variables
 $base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
-$header-font-family: Helvetica, Arial, sans-serif;
+$header-font-family: "Montserrat", Helvetica, Arial, sans-serif;
 $base-font-size: 16px;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.875;
@@ -57,8 +57,9 @@ $color-grey-dark: darken($color-grey, 25%);
 @import "navigation";
 @import "index";
 @import "boxy-list";
+@import "categories";
 @import "set";
-@import "gels";
+@import "props";
 @import "gobos";
 
 {% for gel in site.data.gels %}

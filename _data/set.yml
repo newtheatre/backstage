@@ -15,7 +15,7 @@
 - set: 
   - material: Wood 
     name: Cane chair  
-    colour: Brown 
+    color: Brown 
     paint: false 
     category: Seating 
     image: cane-chair.png
@@ -26,7 +26,7 @@
    
   - material: Wood 
     name: Kitchen chair 
-    colour: Dark brown 
+    color: Dark brown 
     paint: false 
     category: Seating 
     image: kitchen-chair.png
@@ -37,7 +37,7 @@
 
   - material: Wood, leather
     name: Wooden leather chair 
-    colour: Dark red, brown 
+    color: Dark red, brown 
     paint: false 
     category: Seating 
     image: wooden-leather-chair.png
