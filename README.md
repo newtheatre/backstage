@@ -2,7 +2,7 @@
 
 [Jekyll](http://jekyllrb.com/) based site to catalogue set, props and costumes. Based on [lx](http://github.com/newtheatre/lx)
 
-![Screenshot](https://raw.githubusercontent.com/newtheatre/lx/gh-pages/screenshot.png)
+![Screenshot](https://github.com/samozzy/backstage/blob/gh-pages/backstage.png?raw=true)
 
 ## Editing
 
