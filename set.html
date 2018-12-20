@@ -9,7 +9,8 @@ filter: true
 <div class="wrapper">
   <div class="category">
     <ul class="category-list">
-      {% for category in site.data.set[0].categories %}
+      {% assign cats_ordered = site.data.categories[0].set | sort: "name" %}
+      {% for category in cats_ordered %}
         <li>
           <div class="category-item set-type-{{ category.name | slugify }}" id="{{ category.name | slugify }}">{{ category.name }}</div>
         </li>
@@ -18,25 +19,25 @@ filter: true
   </div>
   <div class="set">
     <ul class="set-list" id="item-list">
-      {% for set in site.data.set[1].set %}
+      {% assign set_ordered = site.data.set | sort: "Name" | sort: "Category"  %}
+      {% for set in set_ordered %}
       <li>
-        <div class="set-item set-type-{{ set.category | slugify }}" title="{{ set.category }}">
-          {% if set.image %}
+        <div class="set-item set-type-{{ set.Category | slugify }}" title="{{ set.category }}">
+          {% if set.Image %}
             <div class="set-image">
-              <img src="{{ site.baseurl }}/images/set/{{ set.category | slugify }}/{{ set.image }}" />
+              <img src="{{ site.baseurl }}/images/set/{{ set.Category | slugify }}/{{ set.Image }}" />
             </div>
           {% else %}
             <div class="set-image" style="background:inherit;padding: 1em">
               <i class="fa fa-fw fa-2x fa-cube"></i>
             </div>
           {% endif %}
-          <h2 class="set-title"><strong>{{ set.name }}</strong> {% if set.material %}({{ set.material }}){% endif %}</h2>
-          <span class="category">{{ set.category }}</span>
-          {% if set.notes %}<p><em>{{ set.notes | markdownify }}</em></p>{% endif %}
-          {% if set.measurements %}<p><i class="fa fa-fw fa-ruler-combined"></i> {{ set.measurements }}</p>{% endif %}
-          {% if set.color or set.paint %}<p>{% if set.color %}<i class="fa fa-fw fa-palette"></i> {{ set.color }}{% endif %} {% if set.paint == true %}<i class="fa fa-paint-brush fa-fw fa-sm" title="You may repaint this item."></i>{% endif %}</p>{% endif %}
-            
-          {% if set.stock.good %}<p><i class="fa fa-fw fa-tags"></i> {{ set.stock.good }} in stock</p>{% endif %}
+          <h2 class="set-title"><strong>{{ set.Name | capitalize }}</strong> {% if set.Material %}({{ set.Material }}){% endif %}</h2>
+          <span class="category">{{ set.Category }}</span>
+          {% if set.Notes %}<p><em>{{ set.Notes | markdownify }}</em></p>{% endif %}
+          {% if set.Measurements %}<p><i class="fa fa-fw fa-ruler-combined"></i>&nbsp;{{ set.Measurements }}</p>{% endif %}
+          {% if set.Color or set.Paint %}<p>{% if set.Color %}<i class="fa fa-fw fa-palette"></i>&nbsp;{{ set.Color | capitalize }}{% endif %} {% if set.Paint == true %}<i class="fa fa-paint-brush fa-fw fa-sm" title="You may repaint this item."></i>{% endif %}</p>{% endif %}
+          {% if set.Stock %}<p><i class="fa fa-fw fa-tags"></i>&nbsp;{{ set.Stock }} in stock</p>{% endif %}
         </div>
       </li>
       {% endfor %}

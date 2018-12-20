@@ -1,0 +1,11 @@
+- set:
+  - name: Seating 
+  - name: Tables 
+  - name: Storage
+  - name: Beds 
+  - name: Kitchen 
+  - name: Bathroom 
+  - name: Walls and Flooring
+  - name: Electrical and Lighting 
+  - name: Exterior
+  - name: Misc 
