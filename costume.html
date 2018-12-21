@@ -1,0 +1,50 @@
+---
+title: Costume Stock
+layout: stock
+permalink: /costume/
+search: true 
+filter: true 
+---
+
+<div class="wrapper">
+  <div class="category">
+    <ul class="category-list">
+      {% assign cats_ordered = site.data.categories[1].costume | sort: "name" %}
+      {% for category in cats_ordered %}
+        <li>
+          <div class="category-item costume-type-{{ category.name | slugify }}" id="{{ category.name | slugify }}">{{ category.name }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="costume">
+    <p>All costumes are assumed to be gender-neutral. Alterations are <strong>only</strong> at the discretion of the Costume, Props and Make-Up Manager.</p>
+    <ul class="costume-list" id="item-list">
+      {% assign costume_ordered = site.data.costume | sort: "Name" | sort: "Category" %}
+      {% for costume in costume_ordered %}
+      <li>
+        <div class="costume-item costume-type-{{ costume.Category | slugify }}" title="{{ costume.Category }}">
+          {% if costume.Image %}
+            <div class="costume-image">
+              <img src="{{ site.baseurl }}/images/costume/{{ costume.Category | slugify }}/{{ costume.Image }}" />
+            </div>
+          {% else %}
+            <div class="costume-image" style="background:inherit;padding: 1em">
+              <i class="fa fa-fw fa-2x fa-tshirt"></i>
+            </div>
+          {% endif %}
+          <h2 class="costume-title"><strong>{{ costume.Name | capitalize }}</strong> {% if costume.Material %}({{ costume.Material | capitalize }}){% endif %}</h2>
+          <span class="category">{{ costume.Category }}</span>
+          {% if costume.Notes %}<p><em>{{ costume.Notes | capitalize | markdownify }}</em></p>{% endif %}
+          {% if costume.Size %}<p><i class="fa fa-fw fa-user-tag"></i>&nbsp;Size: {{ costume.Size }}</p>{% endif %}
+          {% if costume.Color %}<p><i class="fa fa-fw fa-palette"></i>&nbsp;{{ costume.Color | capitalize }}</p>{% endif %}
+          {% if costume.Period %}<p><i class="far fa-fw fa-clock"></i>&nbsp;{{ costume.Period | capitalize }}</p>{% endif %}
+          {% if costume.Stock %}<p><i class="fa fa-fw fa-tags"></i>&nbsp;{{ costume.Stock }} in stock</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
+

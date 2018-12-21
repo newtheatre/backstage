@@ -27,6 +27,20 @@ $prop-color-map: (
   exterior: #2CB141,
 );
 
+// Costume categories: tops and shirts; trousers and shorts; jackets and coats; hat; nightwear; vest; dresses and skirts; accessories; all in one; misc
+$costume-color-map: ( 
+  tops-and-shirts: #DC6D15,
+  trousers-and-shorts: #964a0e,
+  jackets-and-coats: #BF8C64,
+  hat: #D0357D,
+  nightwear: #2F8587,
+  vest: #32E1E5,
+  dresses-and-skirts: #007C14,
+  accessories: #2CB141,
+  all-in-one: yellow,
+  misc: #848181
+);
+
 .category {
   @include boxy-list-container;
 }

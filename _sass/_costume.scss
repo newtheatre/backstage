@@ -1,0 +1,71 @@
+.costume {
+  @include boxy-list-container;
+}
+
+.costume-list {
+  @include boxy-list;
+}
+
+$swatch-width: 25%;
+
+.costume-item {
+  @include boxy-list-item;
+
+  color: $color-text-white;
+  padding: 1rem 1rem 1rem ($swatch-width + 6%);
+
+  i {
+    // font-size: 1.6em
+    vertical-align: middle;
+
+    &.paint-false {
+      color: red;
+    }
+
+    &.paint-true {
+      color: green;
+    }
+  }
+
+  .costume-title {
+    font-weight: lighter;
+  }
+
+  .costume-title + .costume-name {
+    margin-top: -0.5em;
+  }
+
+  .costume-name {
+    margin-bottom: 0.5em;
+    font-style: italic;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.costume-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $swatch-width;
+  height: 16em;
+  margin-right: 4%;
+  background: white;
+
+  img {
+    padding: 0.5rem;
+    width: 100%;
+  }
+}
+
+$background-mix: 45%;
+
+@each $type, $color in $costume-color-map {
+  .costume-type-#{$type} {
+    background: mix($color, $color-background, $background-mix);
+  }
+};
+
+

@@ -9,3 +9,15 @@
   - name: Electrical and Lighting 
   - name: Exterior
   - name: Misc 
+
+- costume:
+  - name: Tops and Shirts
+  - name: Trousers and Shorts
+  - name: Jackets and Coats
+  - name: Nightwear
+  - name: Dresses and Skirts
+  - name: Vest
+  - name: Accessories
+  - name: Hat
+  - name: All-in-one
+  - name: Misc

@@ -60,7 +60,7 @@ $color-grey-dark: darken($color-grey, 25%);
 @import "categories";
 @import "set";
 @import "props";
-@import "gobos";
+@import "costume";
 
 {% for gel in site.data.gels %}
   {% if gel.code and gel.color %}
